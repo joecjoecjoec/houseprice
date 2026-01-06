@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: houseprice
+    runtime: docker
+    repo: https://github.com/joecjoecjoec/houseprice.git
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /health
