@@ -45,22 +45,23 @@ Example output:
 
 This project uses **Python virtual environment (venv)** and a `requirements.txt` file.
 
+
 ### Setup
 
-1. Clone the repository:
+### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/joecjoecjoec/houseprice.git
 cd houseprice
 ```
 
-2. Create and activate a virtual environment:
+### 2. Create and activate a virtual environment:
 ```bash 
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-3. Install dependencies:
+### 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
