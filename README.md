@@ -156,17 +156,23 @@ pip install -r requirements.txt
 ```
 ### 6.2 Train the model
 
+This step trains the final model and creates model.bin.
+
 ```bash
 python train.py
 ```
-This creates model.bin.
+
 
 ### 6.3 Run the service locally (without Docker)
+
+Start the service (Terminal 1):
 
 ```bash 
 gunicorn --bind 0.0.0.0:9696 predict:app
 ```
-Test:
+
+Test it (Terminal 2):
+
 ```bash
 curl -i http://localhost:9696/health
 ```
@@ -184,6 +190,11 @@ curl -X POST http://localhost:9696/predict \
     "amountin_rupees": "42 Lac"
   }'
   ```
+
+Example response:
+```json
+{"predicted_price_in_rupees":12982.82743088388}
+```
 
 ## 7. Run with Docker
 ### 7.1 Build the image
@@ -203,8 +214,12 @@ curl -i http://localhost:9696/health
 ```
 
 ## 8. Cloud deployment (Render)
-The service is deployed on Render:
+
+The service is deployed on Render (Docker runtime, auto-deploy from GitHub main branch).
 	•	Base URL: https://houseprice-5aia.onrender.com
+
+Note: Render free instances may spin down when idle, so the first request can take ~50 seconds.
+
 Test:
 ```bash
 curl -i https://houseprice-5aia.onrender.com/health
