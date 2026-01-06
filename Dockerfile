@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 9696
 
-CMD ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
+CMD ["sh", "-c", "gunicorn --bind=0.0.0.0:${PORT:-9696} predict:app"]
