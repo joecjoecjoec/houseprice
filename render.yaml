@@ -4,5 +4,6 @@ services:
     runtime: docker
     repo: https://github.com/joecjoecjoec/houseprice.git
     branch: main
+    plan: free
     autoDeploy: true
     healthCheckPath: /health
